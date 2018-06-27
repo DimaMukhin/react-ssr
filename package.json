@@ -56,7 +56,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "start:server": "webpack -w & nodemon server.js",
+    "start:server": "NODE_ENV=development webpack -w & nodemon server.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
