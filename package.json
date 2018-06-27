@@ -97,7 +97,7 @@
   "babel": {
     "presets": [
       "env",
-      "react"
+      "react-app"
     ],
     "plugins": [
       "transform-object-rest-spread"

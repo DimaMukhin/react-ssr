@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { renderToString } from 'react-dom/server';
 import React from 'react';
+import serialize from 'serialize-javascript';
 
 import App from '../src/App';
 
@@ -33,7 +34,7 @@ app.get('*', (req, res, next) => {
                 You need to enable JavaScript to run this app.
             </noscript>
             <div id="root">${markup}</div>
-            <script type="text/javascript" src="/static/js/main.ad86977a.js"></script>
+            <script type="text/javascript" src="/static/js/main.dff2ec20.js"></script>
         </body>
         </html>
     `);
