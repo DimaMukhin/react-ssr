@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import './App.css';
+
+import News from './containers/News';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <div className='App'>
-        <div className='App-header'>
-          <h2>Welcome to React in the server</h2>
-        </div>
-        <p className='App-intro'>Isn't this cool?</p>
+      <div>
+        <News initialData={ this.props.initialData }/>
       </div>
     )
   }

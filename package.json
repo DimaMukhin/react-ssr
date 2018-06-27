@@ -33,6 +33,7 @@
     "html-webpack-plugin": "2.29.0",
     "isomorphic-fetch": "^2.2.1",
     "jest": "20.0.4",
+    "json-server": "^0.14.0",
     "nodemon": "^1.17.5",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -57,6 +58,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "start:server": "NODE_ENV=development webpack -w & nodemon server.js",
+    "start:api": "json-server --watch db.json --port 3004",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
