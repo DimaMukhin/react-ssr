@@ -25,7 +25,7 @@ app.get('*', (req, res, next) => {
             <meta name="theme-color" content="#000000">
             
             <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-            <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+            <link rel="shortcut icon" href="/favicon.ico">
             <title>React App</title>
         </head>
         <body>
@@ -33,6 +33,7 @@ app.get('*', (req, res, next) => {
                 You need to enable JavaScript to run this app.
             </noscript>
             <div id="root">${markup}</div>
+            <script type="text/javascript" src="/static/js/main.ad86977a.js"></script>
         </body>
         </html>
     `);

@@ -105,7 +105,7 @@ app.use(_express2.default.static('build'));
 app.get('*', function (req, res, next) {
     var markup = (0, _server.renderToString)(_react2.default.createElement(_App2.default, null));
 
-    res.send('\n        <!DOCTYPE html>\n        <html lang="en">\n        <head>\n            <meta charset="utf-8">\n            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">\n            <meta name="theme-color" content="#000000">\n            \n            <link rel="manifest" href="%PUBLIC_URL%/manifest.json">\n            <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">\n            <title>React App</title>\n        </head>\n        <body>\n            <noscript>\n                You need to enable JavaScript to run this app.\n            </noscript>\n            <div id="root">' + markup + '</div>\n        </body>\n        </html>\n    ');
+    res.send('\n        <!DOCTYPE html>\n        <html lang="en">\n        <head>\n            <meta charset="utf-8">\n            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">\n            <meta name="theme-color" content="#000000">\n            \n            <link rel="manifest" href="%PUBLIC_URL%/manifest.json">\n            <link rel="shortcut icon" href="/favicon.ico">\n            <title>React App</title>\n        </head>\n        <body>\n            <noscript>\n                You need to enable JavaScript to run this app.\n            </noscript>\n            <div id="root">' + markup + '</div>\n            <script type="text/javascript" src="/static/js/main.ad86977a.js"></script>\n        </body>\n        </html>\n    ');
 });
 
 app.listen(3000, function () {
@@ -176,7 +176,6 @@ var App = function (_Component) {
         _react2.default.createElement(
           "header",
           { className: "App-header" },
-          _react2.default.createElement("img", { src: logo, className: "App-logo", alt: "logo" }),
           _react2.default.createElement(
             "h1",
             { className: "App-title" },
