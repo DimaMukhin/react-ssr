@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const nodeExternals = require('webpack-node-externals');
 
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
@@ -8,6 +9,7 @@ process.env.NODE_ENV = 'development';
 var serverConfig = {
   entry: './server/index.js',
   target: 'node',
+  externals: [nodeExternals()],
   output: {
     path: __dirname,
     filename: 'server.js',

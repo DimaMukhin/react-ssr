@@ -17,7 +17,6 @@ app.get("*", (req, res) => {
     const requestInitialData = currentRoute.component.requestInitialData && currentRoute.component.requestInitialData();
 
     Promise.resolve(requestInitialData).then((initialData) => {
-        console.log(initialData);
         const context = { initialData };
         const markup = renderToString(
             <StaticRouter location={req.url} context={context}>
@@ -52,5 +51,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log("Server is listening");
+    console.log("Server is listening on port 3000");
 });

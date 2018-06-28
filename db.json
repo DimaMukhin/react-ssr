@@ -4,11 +4,11 @@
     ],
     "news": [
       { "id": 1, "title": "json-server", "author": "typicode", "content": "this is the best news article ever!" },
-      { "id": 2, "title": "Dima is back", "author": "Dimba", "content": "this is the best news article ever!" },
+      { "id": 2, "title": "SSR async fetch", "author": "Dimba", "content": "this is the best news article ever!" },
       { "id": 3, "title": "Fake Title", "author": "Ben", "content": "this is the best news article ever!" },
       { "id": 4, "title": "Not so fake title", "author": "typicode", "content": "this is the best news article ever!" },
-      { "id": 5, "title": "What do you want?", "author": "typicode", "content": "this is the best news article ever!" },
-      { "id": 6, "title": "Too much", "author": "typicode", "content": "this is the best news article ever!" }
+      { "id": 5, "title": "Another one", "author": "typicode", "content": "this is the best news article ever!" },
+      { "id": 6, "title": "The cake is a lie", "author": "typicode", "content": "this is the best news article ever!" }
     ],
     "comments": [
       { "id": 1, "body": "some comment", "postId": 1 }
