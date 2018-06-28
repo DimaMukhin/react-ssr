@@ -2,6 +2,9 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+process.env.BABEL_ENV = 'development';
+process.env.NODE_ENV = 'development';
+
 var serverConfig = {
   entry: './server/index.js',
   target: 'node',

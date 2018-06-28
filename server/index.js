@@ -1,19 +1,29 @@
 import express from "express";
 import React from "react";
 import { renderToString } from "react-dom/server";
+import { StaticRouter, matchPath } from 'react-router-dom';
+import serialize from 'serialize-javascript';
 import fetch from 'isomorphic-fetch';
 
 import App from "../src/App";
+import routes from '../src/routes';
 
 const app = express();
 
 app.use(express.static("build"));
 
 app.get("*", (req, res) => {
-    fetch('http://localhost:3004/news').then((data) => {
-        return data.json();
-    }).then((initialData) => {
-        const markup = renderToString(<App initialData={initialData} />);
+    const currentRoute = routes.find(route => matchPath(req.url, route));
+    const requestInitialData = currentRoute.component.requestInitialData && currentRoute.component.requestInitialData();
+
+    Promise.resolve(requestInitialData).then((initialData) => {
+        console.log(initialData);
+        const context = { initialData };
+        const markup = renderToString(
+            <StaticRouter location={req.url} context={context}>
+                <App />
+            </StaticRouter>
+        );
 
         res.send(`
             <!DOCTYPE html>
@@ -27,7 +37,7 @@ app.get("*", (req, res) => {
                     <link rel="shortcut icon" href="/favicon.ico">
                     <title>React App</title>
 
-                    <script>window.__initialData__ = ${JSON.stringify(initialData)} </script>
+                    <script>window.__initialData__ = ${serialize(initialData)} </script>
                 </head>
                 <body>
                     <noscript>

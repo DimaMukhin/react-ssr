@@ -57,7 +57,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "start:server": "NODE_ENV=development webpack -w & nodemon server.js",
+    "start:server": "webpack -w & nodemon server.js",
     "start:api": "json-server --watch db.json --port 3004",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"

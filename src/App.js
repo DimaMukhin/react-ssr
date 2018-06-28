@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 
-import News from './containers/News';
+import routes from './routes';
+import api from './services/api';
 
 class App extends Component {
 
@@ -11,7 +13,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <News initialData={ this.props.initialData }/>
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/news'>News</Link></li>
+        </ul>
+        <Switch>
+          { routes.map((route, i) => { return <Route key={i} {...route} /> }) }
+        </Switch>
       </div>
     )
   }
